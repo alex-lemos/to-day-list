@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+}
+
+li{
+    list-style: none;
+}
+
+input[type=text]{
+    margin-bottom: 10px;
+}
+
+input[type=checkbox]{
+    padding: 50px;
+}
+
+input[type=checkbox]:checked ~ label {
+    text-decoration: line-through;
+}
