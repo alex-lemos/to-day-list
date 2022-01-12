@@ -24,7 +24,7 @@ addTarefas = function(){
     let tarefa = campoTarefa.value
 
     // tarefa = '<li>'+tarefa+'</li>'
-    tarefa = '<div><input type="checkbox"><label>'+tarefa+'</label></div>'
+    tarefa = '<div class="atividade"><input type="checkbox"><label>'+tarefa+'</label></div>'
 
     // Deixo o campo que preencho o nome da tarefa em branco
     campoTarefa.value = ""
@@ -44,4 +44,16 @@ addTarefas = function(){
 
     console.log(tarefas)
     
+}
+
+// Função que limpa as atividades
+
+clearAll = function(){
+
+    // Para limpar do localStorage
+    localStorage.clear();
+
+    // Para apagar da tela
+    document.getElementById("toDoList").innerHTML="";
+
 }

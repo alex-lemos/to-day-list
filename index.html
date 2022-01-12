@@ -8,21 +8,24 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
 </head>
 
 <body>
 
-    <h1>To-day List</h1>
+    <main>
+        <h1>To-day List</h1>
 
-    <form>
-        <input id="listTarefa" type="text">
-        <input type="button" value="Add" onclick="addTarefas()">
-    </form>
+        <form>
+            <input id="listTarefa" type="text">
+            <input class="bt" type="button" value="Add" onclick="addTarefas()">
+            <input class="bt" type="button" value="Clear All" onclick="clearAll()">
+        </form>
 
-    <form id="toDoList">
-    </form>
+        <form id="toDoList">
+        </form>
+    </main>
 
 </body>
 
