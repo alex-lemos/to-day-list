@@ -101,6 +101,10 @@ input[type=checkbox]:hover ~ label {
         width: 200px;
     }
 
+    input[type=checkbox]:hover ~ label {
+        text-decoration: none;
+    }
+
     main{
         width: 350px;
     }
@@ -109,6 +113,10 @@ input[type=checkbox]:hover ~ label {
 @media screen and (max-width: 400px){
     input[type=text]{
         width: 150px;
+    }
+
+    input[type=checkbox]:hover ~ label {
+        text-decoration: none;
     }
 
     main{
