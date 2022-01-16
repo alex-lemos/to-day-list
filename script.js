@@ -7,11 +7,12 @@ onload = function(){
     //Recupero a lista de tarefas
     let tarefaRecovery = JSON.parse(localStorage.getItem("listas"));
 
-    //Recoloco a lista na tela
-    let listasRecovery = document.getElementById("toDoList");
-    listasRecovery.innerHTML = tarefaRecovery
+    if(tarefaRecovery != null);
+        //Recoloco a lista na tela
+        let listasRecovery = document.getElementById("toDoList");
+        listasRecovery.innerHTML = tarefaRecovery.join("")
 
-    tarefas.push(tarefaRecovery);
+        tarefas.push(tarefaRecovery.join(""));
 
 }
 
@@ -23,26 +24,30 @@ addTarefas = function(){
 
     let tarefa = campoTarefa.value
 
-    // tarefa = '<li>'+tarefa+'</li>'
-    tarefa = '<div class="atividade"><input type="checkbox"><label>'+tarefa+'</label></div>'
+    if(tarefa === ""){
+        alert("Please, write a task");
+    }
+    else{
 
-    // Deixo o campo que preencho o nome da tarefa em branco
-    campoTarefa.value = ""
+        tarefa = '<div class="atividade"><input type="checkbox" ><label>'+tarefa+'</label></div>'
 
-    // Adiciono o valor do input no array tarefa
-    tarefas.push(tarefa);
-    
-    //Crio uma variável para poder alterar o HTML da lista
-    let lista = document.getElementById("toDoList");
+        // Deixo o campo que preencho o nome da tarefa em branco
+        campoTarefa.value = ""
 
-    //Utilizo o método join do array Tarefas para poder mostrar os itens do array sem a vírgula
-    lista.innerHTML = tarefas.join("")
+        // Adiciono o valor do input no array tarefa
+        tarefas.push(tarefa);
+        
+        //Crio uma variável para poder alterar o HTML da lista
+        let lista = document.getElementById("toDoList");
 
-    //Salvo o array que contém a lista de tarefas
-    //Utilizo o JSON para salvar meus dados junto com o localStorage
-    localStorage.setItem("listas", JSON.stringify(tarefas.join("")));
+        //Utilizo o método join do array Tarefas para poder mostrar os itens do array sem a vírgula
+        lista.innerHTML = tarefas.join("")
 
-    console.log(tarefas)
+        //Salvo o array que contém a lista de tarefas
+        //Utilizo o JSON para salvar meus dados junto com o localStorage
+        localStorage.setItem("listas", JSON.stringify(tarefas));
+
+    }
     
 }
 
@@ -55,5 +60,8 @@ clearAll = function(){
 
     // Para apagar da tela
     document.getElementById("toDoList").innerHTML="";
+
+    //Recarrega a página
+    location.reload();
 
 }
