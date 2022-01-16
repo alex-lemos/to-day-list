@@ -95,3 +95,23 @@ input[type=checkbox]:hover ~ label {
     background-color: rgba(53, 53, 53, 0.57);
     color: white;
 }
+
+@media screen and (max-width: 500px){
+    input[type=text]{
+        width: 200px;
+    }
+
+    main{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    input[type=text]{
+        width: 150px;
+    }
+
+    main{
+        width: 300px;
+    }
+}
