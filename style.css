@@ -97,6 +97,10 @@ input[type=checkbox]:checked ~ label {
         width: 200px;
     }
 
+    input[type=checkbox]:checked ~ label {
+        text-decoration: line-through;
+    }
+
     main{
         width: 350px;
     }
@@ -105,6 +109,10 @@ input[type=checkbox]:checked ~ label {
 @media screen and (max-width: 400px){
     input[type=text]{
         width: 150px;
+    }
+
+    input[type=checkbox]:checked ~ label {
+        text-decoration: line-through;
     }
 
     main{
